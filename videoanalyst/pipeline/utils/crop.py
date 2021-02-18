@@ -58,7 +58,7 @@ def get_subwindow_tracking(im,
     im: numpy.array
         original image, (H, W, C)
     pos: numpy.array
-        subwindow position
+        subwindow position, or the detected position in last frame
     model_sz: int
         output size
     original_sz: int

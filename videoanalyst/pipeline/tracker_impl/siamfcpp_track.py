@@ -192,13 +192,14 @@ class SiamFCppTracker(PipelineBase):
     def get_avg_chans(self):
         return self._state['avg_chans']
 
-    def track(self,
-              im_x,
-              target_pos,
-              target_sz,
-              features,
-              update_state=False,
-              **kwargs):
+    def track(
+            self,
+            im_x,  # 当前帧
+            target_pos,  # 上一帧的位置
+            target_sz,  # 上一帧的大小
+            features,  # 模版
+            update_state=False,
+            **kwargs):
         if 'avg_chans' in kwargs:
             avg_chans = kwargs['avg_chans']
         else:
